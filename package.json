@@ -1,0 +1,22 @@
+{
+  "name": "bot_nextscum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "command": "node deploy-commands.js",
+    "bot": "node index.js",
+    "start": "npm run command && npm run bot"
+  },
+  "keywords": [],
+  "author": "Natthaphum Phusong (4JIZEN)",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.2.3",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "npm-run-all": "^4.1.5",
+    "steamid": "^2.0.0"
+  }
+}
