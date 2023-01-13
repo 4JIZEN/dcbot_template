@@ -8,7 +8,7 @@ module.exports.getLastSeason = async function () {
     const { data, error } = await _supabase
         .from("seasons")
         .select("*")
-        .order("id", { ascending: false })
+        .order("created_at", { ascending: false })
         .limit(1);
 
     return data[0];
@@ -17,11 +17,11 @@ module.exports.getLastSeason = async function () {
 module.exports.hasRegister = async function (steam_id, discord_id, season_id) {
     const { data, error } = await _supabase
         .from("players")
-        .select("id")
+        .select("*")
         .eq("season_id", season_id)
-        .or(`steam_id.eq.${steam_id}, discord_id.eq.${discord_id}`)
+        .or(`steam_id.eq.${steam_id}, discord_id.eq.${discord_id}`);
 
-    return data.length && true;
+    return data?.length && true;
 };
 
 module.exports.playerRegister = async function (
