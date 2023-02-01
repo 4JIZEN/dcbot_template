@@ -65,14 +65,14 @@ module.exports = {
                 .catch(async (error) => {
                     console.error(error);
                     await interaction.reply({
-                        content: `[1] เกิดข้อผิดพลาด ติดต่อแอดมิน`,
+                        content: `เกิดข้อผิดพลาด ติดต่อแอดมิน`,
                         ephemeral: true,
                     });
                 });
         } catch (error) {
             console.error(error);
             await interaction.reply({
-                content: `[2] เกิดข้อผิดพลาด ติดต่อแอดมิน`,
+                content: `เกิดข้อผิดพลาด ติดต่อแอดมิน`,
                 ephemeral: true,
             });
         }

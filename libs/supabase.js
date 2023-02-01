@@ -9,6 +9,7 @@ module.exports.getLastSeason = async function () {
         .from("seasons")
         .select("*")
         .order("created_at", { ascending: false })
+        .eq("current", true)
         .limit(1);
 
     return data[0];
